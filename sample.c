@@ -7,7 +7,7 @@
 
 #define _XTAL_FREQ 4000000
 
-//-------------- ?????????? ------------------------
+//-------------- CONFIG ------------------------
 #pragma config PWRTEN = OFF, BOREN  = OFF, BORV   = 30
 #pragma config WDTEN  = ON, WDTPS  = 1024
 #pragma config STVREN = ON
@@ -31,7 +31,7 @@ unsigned char slee[6] = "SLEEP";
 
 unsigned char receiv[] = "";
 int v = 0;
-//****** ?????   ************************
+//******************************
 void main(void){
     char i;
     OSCCON = 0b01010010;   // IRC->4Mhz
@@ -42,7 +42,7 @@ void main(void){
     //TRISB = 0x00;   // PortB
     TRISC = 0b00001000;   // PortC
 
-    ANSEL  = 0;                // Port ... if this nothing, no RX.
+    ANSEL  = 0;                // Port ... if this nothing, do no RX.
     ANSELH = 0;
     // AD setting
     ADCON2 = 0b10101100;
